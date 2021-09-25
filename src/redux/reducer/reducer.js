@@ -1,20 +1,17 @@
-import { USER_FETCH,POSTS_FETCH } from "./../actions/actionsTypes";
-const initState = {
+import { FAILED, GET_USERS } from "./../actions/actionsTypes";
+const initialState = {
     users: [],
-    posts:[],
-    error: [],
+    errors: [],
+    posts: [],
+    comments: [],
 };
-
-const reducer = (state = initState, { payload, type }) => {
+export const reducer = (state = initialState, { type, payload }) => {
     switch (type) {
-        case USER_FETCH:
+        case GET_USERS:
             return { ...state, users: payload };
-        case POSTS_FETCH:
-            return { ...state, posts: payload };
-
+        case FAILED:
+            return { ...state, errors: payload };
         default:
             return state;
     }
 };
-
-export default reducer;

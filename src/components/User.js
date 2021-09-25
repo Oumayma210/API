@@ -1,37 +1,26 @@
 import React from "react";
-import { Card, Icon, Button } from "semantic-ui-react";
-import "./User.css";
-import { getPosts } from "../redux/actions/actions";
-import { useDispatch } from "react-redux";
+import { Button, Card, Image } from "semantic-ui-react";
 
-const User = ({ user }) => {
-    const dispatch = useDispatch();
-    return (
-        <Card className="card">
-            {/* <Image src='/images/avatar/large/matthew.png' wrapped ui={false} /> */}
-            <Card.Content>
-                <Card.Header>{user.name}</Card.Header>
-                <Card.Meta>
-                    <span className="date">{user.username}</span>
-                </Card.Meta>
-                <Card.Description>{user.website}</Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-                <a>
-                    <Icon name="phone" />
-                    {user.phone}
-                </a>
-            </Card.Content>
+const User = () => (
+    <Card>
+        <Card.Content>
+            <Image
+                floated="right"
+                size="mini"
+                src="/images/avatar/large/steve.jpg"
+            />
+            <Card.Header>Hello</Card.Header>
+            <Card.Meta>h</Card.Meta>
+            <Card.Description>E-mail </Card.Description>
+        </Card.Content>
+        <Card.Content extra>
             <div className="ui two buttons">
-                <Button
-                    basic
-                    color="green"
-                    onClick={() => dispatch(getPosts(user.id))}
-                >
-                    Profile
+                <Button basic color="green">
+                    Approve
                 </Button>
             </div>
-        </Card>
-    );
-};
+        </Card.Content>
+    </Card>
+);
+
 export default User;
