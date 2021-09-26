@@ -24,8 +24,18 @@ const User = ({ user }) => (
         <Card.Content extra>
             <div className="ui two buttons">
                 <Link to={`/profile/${user.id}`}>
-                    <Button basic color="green">
-                        Approve
+                    <Button
+                        
+                        style={{
+                            width: "90px",
+                            height: "40px",
+                            color: "white",
+                            backgroundColor: "black",
+                            fontSize: "16px",
+                            fontStyle: "italic",
+                        }}
+                    >
+                        Profile
                     </Button>
                 </Link>
             </div>
