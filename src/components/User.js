@@ -3,7 +3,9 @@ import { Button, Card, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 const User = ({ user }) => (
+    
     <Card style={{ display: "flex", margin: "auto" }}>
+        
         <Card.Content>
             <Image
                 floated="right"

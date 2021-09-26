@@ -8,19 +8,19 @@ const UserList = () => {
     useEffect(() => {
         dispatch(getUsers());
     }, []);
-    const user = useSelector((state) => state.reducer.users); 
+    const user = useSelector((state) => state.reducer.users);
 
     return (
-        <Card.Group>
-            {user.map(
-                (
-                    user,
-                    i 
-                ) => (
+        <div>
+            <h1 style={{ color: "brown", justifyContent: "center" }}>
+                List of users
+            </h1>
+            <Card.Group>
+                {user.map((user, i) => (
                     <User user={user} key={i} />
-                )
-            )}
-        </Card.Group>
+                ))}
+            </Card.Group>
+        </div>
     );
 };
 

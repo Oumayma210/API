@@ -4,7 +4,7 @@ import { getPosts } from '../redux/actions/actions'
 
 const Posts= ({post}) => (
     <Item>
-      <Item.Image size='small' src="https://th.bing.com/th/id/R.437da161e3f3957fb166f7445a759132?rik=DhTY7lMUNGFh%2bA&pid=ImgRaw&r=0" />
+      {/* <Item.Image size='small' src="https://th.bing.com/th/id/R.437da161e3f3957fb166f7445a759132?rik=DhTY7lMUNGFh%2bA&pid=ImgRaw&r=0" /> */}
 
       <Item.Content>
         <Item.Header as='a'>{post.title}</Item.Header>
