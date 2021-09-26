@@ -1,9 +1,11 @@
 .App{
   font-style: italic;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  justify-content: center;  
 }
 h1{
 
 margin-bottom:  40px !important;
 display:flex !important;}
+p{
+  display: inline;
+}

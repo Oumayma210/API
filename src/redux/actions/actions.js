@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_USERS, FAILED, GET_POSTS,GET_USER_BY_ID } from "./actionsTypes";
+import { GET_USERS, FAILED, GET_POSTS,GET_USER_BY_ID, GET_POSTS_BY_ID } from "./actionsTypes";
 //get all users
 export const getUsers = () => async (dispatch) => {
   try {
@@ -34,7 +34,7 @@ export const getUser = (id) => async (dispatch) => {
 export const getPosts = (id) => async (dispatch) => {
   dispatch(getUser(id))
     try {
-      let result = await axios.get("https://jsonplaceholder.typicode.com/posts?userId=1 ");
+      let result = await axios.get(`https://jsonplaceholder.typicode.com/posts?userId=${id} `);
       dispatch({
         type: GET_POSTS,
         payload: result.data,  
@@ -46,3 +46,21 @@ export const getPosts = (id) => async (dispatch) => {
       });
     }
   }; 
+  //get comments
+  export const getComments = (id) => async (dispatch) => {
+
+      try {
+        let result = await axios.get(`https://jsonplaceholder.typicode.com/comments?postId
+        ${id} `);
+        dispatch({
+          type: GET_POSTS_BY_ID ,
+          payload: result.data,  
+        });
+      } catch (error) {
+        dispatch({
+          type: FAILED,
+          payload: error
+        });
+      }
+    }; 
+   

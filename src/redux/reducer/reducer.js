@@ -1,4 +1,10 @@
-import { FAILED, GET_USERS, GET_POSTS,GET_USER_BY_ID } from "./../actions/actionsTypes";
+import {
+    FAILED,
+    GET_USERS,
+    GET_POSTS,
+    GET_USER_BY_ID,
+    GET_POSTS_BY_ID,
+} from "./../actions/actionsTypes";
 const initialState = {
     users: [],
     errors: [],
@@ -14,6 +20,9 @@ export const reducer = (state = initialState, { type, payload }) => {
             return { ...state, posts: payload };
         case GET_USER_BY_ID:
             return { ...state, user: payload };
+        case GET_POSTS_BY_ID:
+            return { ...state, comments: payload };
+
         case FAILED:
             return { ...state, errors: payload };
         default:

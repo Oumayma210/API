@@ -28,8 +28,7 @@ const Profile = ({ match, history }) => {
   <Card centered={true}
     image='https://th.bing.com/th/id/R.437da161e3f3957fb166f7445a759132?rik=DhTY7lMUNGFh%2bA&pid=ImgRaw&r=0'
     header={user.name}
-    meta='Friend'
-    description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.'
+    description={user.email}
   />
 
             {posts.map((post, i) => (
