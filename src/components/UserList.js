@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Card } from "semantic-ui-react";
 import { getUsers } from "../redux/actions/actions";
 import User from "./User";
 const UserList = () => {
@@ -7,14 +8,19 @@ const UserList = () => {
     useEffect(() => {
         dispatch(getUsers());
     }, []);
-    const users = useSelector((state) => state.reducer.users)
+    const user = useSelector((state) => state.reducer.users); 
 
     return (
-        <div>
-            {users.map((user, i) => (
-                <User user={user} key={i} />
-            ))};
-        </div>
+        <Card.Group>
+            {user.map(
+                (
+                    user,
+                    i 
+                ) => (
+                    <User user={user} key={i} />
+                )
+            )}
+        </Card.Group>
     );
 };
 
